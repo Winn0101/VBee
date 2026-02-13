@@ -3,56 +3,415 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bee My Valentine</title>
+    <title>Bee My Valentine 🐝💛</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@400;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Bee My Valentine</h1>
-        <p>To my dearest Bee, my Bee, you make my heart buzz with love.</p>
-    </header>
-    <main>
-        <section id="love-quotes">
-            <h2>Sweet Love Quotes</h2>
-            <ul>
-                <li>"You Bee-long to me."</li>
-                <li>"Bee-lieve me, you're my everything."</li>
-                <li>"Bee-cause of you, my heart is full of love."</li>
-                <li>"You're the Queen Bee of my heart."</li>
-                <li>"Bee-ing with you is my favorite thing."</li>
-                <li>"You make my heart buzz with happiness."</li>
-            </ul>
-        </section>
-        <section id="gallery">
-            <h2>Gallery of Love</h2>
-            <p>Here are some placeholders for your pictures and videos:</p>
-            <div class="gallery">
-                <img src="assets/Bee1.jpg" alt="Flowers">
-                <img src="assets/Bee2.jpg" alt="Chocolates">
-                <img src="assets/Bee3.jpg" alt="Petals">
-                <img src="assets/heart.jpg" alt="Heart">
+    <!-- Background Image Slideshow -->
+    <div class="bg-slideshow">
+        <div class="bg-slide active" style="background-image: url('assets/Bee1.jpg')"></div>
+        <div class="bg-slide" style="background-image: url('assets/Bee2.jpg')"></div>
+        <div class="bg-slide" style="background-image: url('assets/Bee3.jpg')"></div>
+        <div class="bg-slide" style="background-image: url('assets/heart.jpg')"></div>
+    </div>
+
+    <!-- Floating Hearts Animation -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <div class="music-toggle" id="musicToggle">
+            <span class="music-icon">🎵</span>
+            <span class="music-text">Play Music</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="hero-content">
+                <div class="honeycomb-bg"></div>
+                <h1 class="main-title">
+                    <span class="title-line">Bee My</span>
+                    <span class="title-line highlight">Valentine</span>
+                </h1>
+                <div class="subtitle-container">
+                    <p class="subtitle">To my dearest Bee 🐝</p>
+                    <p class="tagline">You make my heart buzz with endless love</p>
+                </div>
+                <div class="scroll-indicator">
+                    <span>Scroll to explore our love story</span>
+                    <div class="scroll-arrow">↓</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Pet Names Section -->
+        <section class="section pet-names" id="petNames">
+            <div class="section-inner">
+                <h2 class="section-title">My Sweet Bee 🍯</h2>
+                <div class="pet-names-grid">
+                    <div class="pet-name-card" data-delay="0">
+                        <div class="card-icon">🐝</div>
+                        <h3>Bee</h3>
+                        <p>Because you're the queen of my heart</p>
+                    </div>
+                    <div class="pet-name-card" data-delay="0.1">
+                        <div class="card-icon">🍯</div>
+                        <h3>Honey</h3>
+                        <p>Sweet as can be</p>
+                    </div>
+                    <div class="pet-name-card" data-delay="0.2">
+                        <div class="card-icon">⭐</div>
+                        <h3>My Star</h3>
+                        <p>You light up my world</p>
+                    </div>
+                    <div class="pet-name-card" data-delay="0.3">
+                        <div class="card-icon">👑</div>
+                        <h3>Queen Bee</h3>
+                        <p>Ruling my heart forever</p>
+                    </div>
+                </div>
             </div>
         </section>
-        <section id="videos">
-            <h2>Videos</h2>
-            <p>Here's a lovely video for you:</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/3JWTaaS7LdU" 
-                title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
+
+        <!-- Love Quotes Section -->
+        <section class="section love-quotes" id="loveQuotes">
+            <div class="section-inner">
+                <h2 class="section-title">Sweet Bee-lievable Quotes 💛</h2>
+                <div class="quotes-carousel">
+                    <div class="quote-card">
+                        <div class="quote-icon">🐝</div>
+                        <p class="quote-text">"You Bee-long to me, and I belong to you."</p>
+                    </div>
+                    <div class="quote-card">
+                        <div class="quote-icon">💛</div>
+                        <p class="quote-text">"Bee-lieve me, you're my everything and more."</p>
+                    </div>
+                    <div class="quote-card">
+                        <div class="quote-icon">✨</div>
+                        <p class="quote-text">"Bee-cause of you, my heart is full of love."</p>
+                    </div>
+                    <div class="quote-card">
+                        <div class="quote-icon">🌟</div>
+                        <p class="quote-text">"You're the Queen Bee of my heart, forever and always."</p>
+                    </div>
+                    <div class="quote-card">
+                        <div class="quote-icon">💖</div>
+                        <p class="quote-text">"Bee-ing with you is my favorite thing in the world."</p>
+                    </div>
+                    <div class="quote-card">
+                        <div class="quote-icon">🎵</div>
+                        <p class="quote-text">"You make my heart buzz with happiness every single day."</p>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="poems">
-            <h2>Poems for My Bee</h2>
-            <p>Roses are red, violets are blue,<br>
-            My heart buzzes with love, all because of you.</p>
-            <p>You're my sunshine, my moon, my star,<br>
-            No matter the distance, no matter how far.</p>
+
+        <!-- Bee Puns Section -->
+        <section class="section bee-puns" id="beePuns">
+            <div class="section-inner">
+                <h2 class="section-title">Bee-larious Puns Just for You 🐝</h2>
+                <div class="puns-grid">
+                    <div class="pun-card">
+                        <p>"I'm totally un-BEE-lievably in love with you!"</p>
+                    </div>
+                    <div class="pun-card">
+                        <p>"You're bee-autiful inside and out! 🌸"</p>
+                    </div>
+                    <div class="pun-card">
+                        <p>"Honey, you're the bees knees! 🍯"</p>
+                    </div>
+                    <div class="pun-card">
+                        <p>"I'm pollen for you harder every day! 🌺"</p>
+                    </div>
+                    <div class="pun-card">
+                        <p>"We make a great bee-team! 💛"</p>
+                    </div>
+                    <div class="pun-card">
+                        <p>"You're simply bee-yond compare! ✨"</p>
+                    </div>
+                    <div class="pun-card">
+                        <p>"Let's bee together forever! 🐝💕"</p>
+                    </div>
+                    <div class="pun-card">
+                        <p>"You've got me buzzing with excitement! 🎉"</p>
+                    </div>
+                </div>
+            </div>
         </section>
-    </main>
-    <footer>
-        <p>Made with love for Bee ❤️</p>
-    </footer>
+
+        <!-- Photo Gallery Section -->
+        <section class="section gallery" id="gallery">
+            <div class="section-inner">
+                <h2 class="section-title">Our Beautiful Moments 📸</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-delay="0">
+                        <img src="assets/Bee1.jpg" alt="My Beautiful Bee">
+                        <div class="gallery-overlay">
+                            <p>Absolutely Stunning 💛</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-delay="0.1">
+                        <img src="assets/Bee2.jpg" alt="Sweet Moments">
+                        <div class="gallery-overlay">
+                            <p>Sweet Memories 🍯</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-delay="0.2">
+                        <img src="assets/Bee3.jpg" alt="Love">
+                        <div class="gallery-overlay">
+                            <p>Forever Mine 💖</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-delay="0.3">
+                        <img src="assets/heart.jpg" alt="Heart">
+                        <div class="gallery-overlay">
+                            <p>My Heart Belongs to You 💝</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flowers Section -->
+        <section class="section flowers" id="flowers">
+            <div class="section-inner">
+                <h2 class="section-title">Virtual Flowers for My Bee 🌸</h2>
+                <div class="flowers-garden">
+                    <div class="flower-item">🌹</div>
+                    <div class="flower-item">🌺</div>
+                    <div class="flower-item">🌻</div>
+                    <div class="flower-item">🌷</div>
+                    <div class="flower-item">🌸</div>
+                    <div class="flower-item">💐</div>
+                    <div class="flower-item">🌼</div>
+                    <div class="flower-item">🏵️</div>
+                </div>
+                <p class="flowers-message">A garden of flowers, as beautiful as you 🌺</p>
+            </div>
+        </section>
+
+        <!-- Chocolates Section -->
+        <section class="section chocolates" id="chocolates">
+            <div class="section-inner">
+                <h2 class="section-title">Sweet Treats 🍫</h2>
+                <div class="chocolates-box">
+                    <div class="chocolate-piece">🍫</div>
+                    <div class="chocolate-piece">🍬</div>
+                    <div class="chocolate-piece">🍭</div>
+                    <div class="chocolate-piece">🍰</div>
+                    <div class="chocolate-piece">🧁</div>
+                    <div class="chocolate-piece">🍪</div>
+                    <div class="chocolate-piece">🍩</div>
+                    <div class="chocolate-piece">🎂</div>
+                </div>
+                <p class="chocolates-message">All the sweets in the world aren't as sweet as you! 💛</p>
+            </div>
+        </section>
+
+        <!-- Plantain Section (Special!) -->
+        <section class="section plantain" id="plantain">
+            <div class="section-inner">
+                <h2 class="section-title">For Your Love of Plantain 🍌</h2>
+                <div class="plantain-showcase">
+                    <div class="plantain-item">
+                        <div class="plantain-emoji">🍌</div>
+                        <p>Fried Plantain</p>
+                        <span>Your favorite! 😋</span>
+                    </div>
+                    <div class="plantain-item">
+                        <div class="plantain-emoji">🍽️</div>
+                        <p>Plantain Chips</p>
+                        <span>Crispy & Delicious! 💛</span>
+                    </div>
+                    <div class="plantain-item">
+                        <div class="plantain-emoji">🔥</div>
+                        <p>Grilled Plantain</p>
+                        <span>Made with love! 💕</span>
+                    </div>
+                </div>
+                <p class="plantain-message">I'll make you plantain anytime, my love! 🍌💛</p>
+            </div>
+        </section>
+
+        <!-- Music Section -->
+        <section class="section music" id="music">
+            <div class="section-inner">
+                <h2 class="section-title">Our Love Playlist 🎵</h2>
+                <div class="music-grid">
+                    <div class="music-card">
+                        <div class="music-thumbnail">
+                            <iframe width="100%" height="200" src="https://www.youtube.com/embed/3JWTaaS7LdU" 
+                                title="Hooked on a Feeling" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <h3>Hooked on a Feeling</h3>
+                        <p>Classic love vibes 💕</p>
+                    </div>
+                    <div class="music-card">
+                        <div class="music-thumbnail">
+                            <iframe width="100%" height="200" src="https://www.youtube.com/embed/kffacxfA7G4" 
+                                title="Baby I Love You" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <h3>Baby I Love You - Aretha Franklin</h3>
+                        <p>Our forever anthem 🎵</p>
+                    </div>
+                    <div class="music-card">
+                        <div class="music-thumbnail">
+                            <iframe width="100%" height="200" src="https://www.youtube.com/embed/450p7goxZqg" 
+                                title="All of Me" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <h3>All of Me - John Legend</h3>
+                        <p>Every part of you 💛</p>
+                    </div>
+                    <div class="music-card">
+                        <div class="music-thumbnail">
+                            <iframe width="100%" height="200" src="https://www.youtube.com/embed/nfWlot6h_JM" 
+                                title="Perfect" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <h3>Perfect - Ed Sheeran</h3>
+                        <p>You're perfect to me ✨</p>
+                    </div>
+                </div>
+                <p class="music-note">🎵 Note: For Savvy Henry and Angeloh songs, add their YouTube links to play their music! 💛</p>
+            </div>
+        </section>
+
+        <!-- Love Poems Section -->
+        <section class="section poems" id="poems">
+            <div class="section-inner">
+                <h2 class="section-title">Poems for My Bee 📝</h2>
+                <div class="poems-container">
+                    <div class="poem-card">
+                        <div class="poem-header">
+                            <span class="poem-icon">🌹</span>
+                            <h3>Classic Love</h3>
+                        </div>
+                        <p class="poem-text">
+                            Roses are red, violets are blue,<br>
+                            My heart buzzes with love, all because of you.<br>
+                            Like bees to honey, I'm drawn to your light,<br>
+                            You make every moment feel perfectly right.
+                        </p>
+                    </div>
+                    <div class="poem-card">
+                        <div class="poem-header">
+                            <span class="poem-icon">⭐</span>
+                            <h3>My Universe</h3>
+                        </div>
+                        <p class="poem-text">
+                            You're my sunshine, my moon, my star,<br>
+                            No matter the distance, no matter how far.<br>
+                            With you by my side, life's a beautiful dream,<br>
+                            Together forever, the perfect team.
+                        </p>
+                    </div>
+                    <div class="poem-card">
+                        <div class="poem-header">
+                            <span class="poem-icon">🐝</span>
+                            <h3>My Queen Bee</h3>
+                        </div>
+                        <p class="poem-text">
+                            In a garden of flowers, you're the rarest bloom,<br>
+                            You brighten my life, dispelling all gloom.<br>
+                            My beautiful Bee, you're one of a kind,<br>
+                            In you, true love I'll always find.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reasons I Love You -->
+        <section class="section reasons" id="reasons">
+            <div class="section-inner">
+                <h2 class="section-title">Why I Love You 💕</h2>
+                <div class="reasons-grid">
+                    <div class="reason-card">
+                        <span class="reason-number">1</span>
+                        <p>Your smile lights up my entire world 😊</p>
+                    </div>
+                    <div class="reason-card">
+                        <span class="reason-number">2</span>
+                        <p>You make me laugh like no one else can 😂</p>
+                    </div>
+                    <div class="reason-card">
+                        <span class="reason-number">3</span>
+                        <p>Your kindness and compassion are beautiful 💖</p>
+                    </div>
+                    <div class="reason-card">
+                        <span class="reason-number">4</span>
+                        <p>You understand me like no one else does 🤝</p>
+                    </div>
+                    <div class="reason-card">
+                        <span class="reason-number">5</span>
+                        <p>Every moment with you is precious 🌟</p>
+                    </div>
+                    <div class="reason-card">
+                        <span class="reason-number">6</span>
+                        <p>You're my best friend and soulmate 💛</p>
+                    </div>
+                    <div class="reason-card">
+                        <span class="reason-number">∞</span>
+                        <p>And infinite more reasons... 🐝💕</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Message -->
+        <section class="section final-message" id="finalMessage">
+            <div class="section-inner">
+                <div class="final-content">
+                    <h2 class="final-title">Happy Valentine's Day, My Bee! 🐝💛</h2>
+                    <p class="final-text">
+                        Thank you for being the most amazing, beautiful, and loving person in my life. 
+                        You make every day brighter, every moment sweeter, and every memory unforgettable.
+                    </p>
+                    <p class="final-text">
+                        I love you more than words can express, more than flowers can show, 
+                        and more than all the honey in the world! 🍯
+                    </p>
+                    <div class="heart-burst">
+                        <span>💛</span>
+                        <span>💕</span>
+                        <span>💖</span>
+                        <span>💝</span>
+                        <span>💗</span>
+                    </div>
+                    <p class="signature">Forever yours,<br><span class="signature-name">Your Loving Partner</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-hearts">
+                <span>💛</span>
+                <span>🐝</span>
+                <span>💛</span>
+            </div>
+            <p>Made with endless love for Bee</p>
+            <p class="footer-date">Valentine's Day 2026</p>
+        </footer>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
