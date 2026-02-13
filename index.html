@@ -10,13 +10,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Background Image Slideshow -->
-    <div class="bg-slideshow">
-        <div class="bg-slide active" style="background-image: url('assets/Bee1.jpg')"></div>
-        <div class="bg-slide" style="background-image: url('assets/Bee2.jpg')"></div>
-        <div class="bg-slide" style="background-image: url('assets/Bee3.jpg')"></div>
-        <div class="bg-slide" style="background-image: url('assets/heart.jpg')"></div>
-    </div>
+    <!-- Animated Background Pattern -->
+    <div class="animated-background"></div>
 
     <!-- Floating Hearts Animation -->
     <div class="hearts-container" id="heartsContainer"></div>
@@ -149,6 +144,42 @@
         <section class="section gallery" id="gallery">
             <div class="section-inner">
                 <h2 class="section-title">Our Beautiful Moments 📸</h2>
+                
+                <!-- Photo Slideshow -->
+                <div class="photo-slideshow-container">
+                    <div class="photo-slideshow">
+                        <div class="photo-slide active">
+                            <img src="assets/Bee1.jpg" alt="My Beautiful Bee">
+                            <div class="slide-caption">Absolutely Stunning 💛</div>
+                        </div>
+                        <div class="photo-slide">
+                            <img src="assets/Bee2.jpg" alt="Sweet Moments">
+                            <div class="slide-caption">Sweet Memories 🍯</div>
+                        </div>
+                        <div class="photo-slide">
+                            <img src="assets/Bee3.jpg" alt="Love">
+                            <div class="slide-caption">Forever Mine 💖</div>
+                        </div>
+                        <div class="photo-slide">
+                            <img src="assets/heart.jpg" alt="Heart">
+                            <div class="slide-caption">My Heart Belongs to You 💝</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slideshow Controls -->
+                    <button class="slide-btn prev-btn">❮</button>
+                    <button class="slide-btn next-btn">❯</button>
+                    
+                    <!-- Slideshow Dots -->
+                    <div class="slide-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                    </div>
+                </div>
+                
+                <!-- Thumbnail Grid -->
                 <div class="gallery-grid">
                     <div class="gallery-item" data-delay="0">
                         <img src="assets/Bee1.jpg" alt="My Beautiful Bee">

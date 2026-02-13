@@ -25,43 +25,34 @@ body {
     position: relative;
 }
 
-/* Background Slideshow */
-.bg-slideshow {
+/* Animated Background */
+.animated-background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -2;
+    background: linear-gradient(-45deg, 
+        #FFE4E1, 
+        #FFB6C1, 
+        #FFF0F5, 
+        #FFD700, 
+        #FFC107);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
 }
 
-.bg-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
-}
-
-.bg-slide.active {
-    opacity: 0.15;
-}
-
-.bg-slide::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, 
-        rgba(255, 228, 225, 0.95) 0%, 
-        rgba(255, 240, 245, 0.9) 50%,
-        rgba(255, 215, 0, 0.85) 100%);
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Floating Hearts */
@@ -428,10 +419,129 @@ body {
 }
 
 /* Gallery Section */
+.gallery {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.95), 
+        rgba(255, 240, 245, 0.9));
+}
+
+/* Photo Slideshow Container */
+.photo-slideshow-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px var(--shadow);
+}
+
+.photo-slideshow {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: var(--black);
+}
+
+.photo-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.photo-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(128, 0, 0, 0.95), transparent);
+    color: var(--white);
+    padding: 40px 20px 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+/* Slideshow Controls */
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 215, 0, 0.8);
+    color: var(--white);
+    border: none;
+    font-size: 2rem;
+    padding: 15px 20px;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.slide-btn:hover {
+    background: rgba(255, 215, 0, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+/* Slideshow Dots */
+.slide-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 2;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+    background: var(--primary-gold);
+    transform: scale(1.3);
+}
+
+/* Gallery Grid (Thumbnails) */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    margin-top: 60px;
 }
 
 .gallery-item {
@@ -842,6 +952,28 @@ body {
 @media (max-width: 768px) {
     .section {
         padding: 60px 15px;
+    }
+    
+    .photo-slideshow {
+        height: 400px;
+    }
+    
+    .slide-btn {
+        padding: 10px 15px;
+        font-size: 1.5rem;
+    }
+    
+    .prev-btn {
+        left: 10px;
+    }
+    
+    .next-btn {
+        right: 10px;
+    }
+    
+    .slide-caption {
+        font-size: 1.3rem;
+        padding: 30px 15px 15px;
     }
     
     .quotes-carousel,

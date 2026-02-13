@@ -3,23 +3,93 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('🐝 Bee My Valentine website loaded with love! 💛');
     
     // Initialize all features
-    initBackgroundSlideshow();
+    initPhotoSlideshow();
     initFloatingHearts();
     initMusicPlayer();
     initScrollAnimations();
     initInteractiveElements();
 });
 
-// Background Image Slideshow
-function initBackgroundSlideshow() {
-    const slides = document.querySelectorAll('.bg-slide');
-    let currentSlide = 0;
+// Photo Slideshow
+function initPhotoSlideshow() {
+    const slides = document.querySelectorAll('.photo-slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
     
-    setInterval(() => {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
+    if (!slides.length) return;
+    
+    let currentSlide = 0;
+    let autoPlayInterval;
+    
+    function showSlide(n) {
+        // Remove active class from all slides and dots
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Wrap around
+        if (n >= slides.length) currentSlide = 0;
+        if (n < 0) currentSlide = slides.length - 1;
+        
+        // Add active class to current slide and dot
         slides[currentSlide].classList.add('active');
-    }, 5000); // Change every 5 seconds
+        dots[currentSlide].classList.add('active');
+    }
+    
+    function nextSlide() {
+        currentSlide++;
+        showSlide(currentSlide);
+    }
+    
+    function prevSlide() {
+        currentSlide--;
+        showSlide(currentSlide);
+    }
+    
+    // Event listeners for buttons
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoPlay();
+    });
+    
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoPlay();
+    });
+    
+    // Event listeners for dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+            resetAutoPlay();
+        });
+    });
+    
+    // Auto play
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+    }
+    
+    function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
+    
+    // Start auto play
+    startAutoPlay();
+    
+    // Pause on hover
+    const slideshowContainer = document.querySelector('.photo-slideshow-container');
+    if (slideshowContainer) {
+        slideshowContainer.addEventListener('mouseenter', () => {
+            clearInterval(autoPlayInterval);
+        });
+        
+        slideshowContainer.addEventListener('mouseleave', () => {
+            startAutoPlay();
+        });
+    }
 }
 
 // Floating Hearts Animation
@@ -300,6 +370,6 @@ document.head.appendChild(explodeStyle);
 console.log(`
     ╔══════════════════════════════════╗
     ║  🐝 Made with Love for Bee 💛   ║
-    ║  Happy Valentine's Day! 💕  ║
+    ║  Happy Valentine's Da! 💕  ║
     ╚══════════════════════════════════╝
 `);
